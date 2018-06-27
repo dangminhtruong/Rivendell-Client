@@ -6,7 +6,6 @@ import registerServiceWorker from './registerServiceWorker';
 
 import thunk from 'redux-thunk';
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
-import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

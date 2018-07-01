@@ -9,11 +9,10 @@ class Stories extends Component {
         this.props.getListPost();
     }
     render() {
-        console.log(this.props.stories);
         let storyList;
         if(this.props.stories){
-            storyList =this.props.stories.map((post, index) => {
-                return (<Post key = { index} post = { post }/>)
+            storyList =this.props.stories.map((story, index) => {
+                return (<Post key = { `p.${index}` } story = { story }/>)
             });
         }
         return (
@@ -27,7 +26,7 @@ class Stories extends Component {
 
 const mapStateToProps = state => {
     return {
-        stories : state.appStoriesReducer
+        stories : state.appStoriesReducer.get('stories').toArray()
     }
 }
 

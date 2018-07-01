@@ -1,30 +1,31 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 class Header extends Component {
     render() {
         return (
             <div>
                 <header id="header">
-                <h1><a href="index.html">Rivendell</a></h1>
+                <h1><Link to='/'>Rivendell</Link></h1>
                 <nav className="links">
                     <ul>
-                        <li><a href="#">Lorem</a></li>
-                        <li><a href="#">Ipsum</a></li>
-                        <li><a href="#">Feugiat</a></li>
-                        <li><a href="#">Tempus</a></li>
-                        <li><a href="#">Adipiscing</a></li>
+                        <li><Link to="/">Lorem</Link></li>
+                        <li><Link to="/">Ipsum</Link></li>
+                        <li><Link to="/">Feugiat</Link></li>
+                        <li><Link to="/">Tempus</Link></li>
+                        <li><Link to="/">Adipiscing</Link></li>
                     </ul>
                 </nav>
                 <nav className="main">
                     <ul>
                         <li className="search">
-                            <a className="fa-search" href="#search">Search</a>
+                            <Link className="fa-search" to="/">Search</Link>
                             <form id="search" method="get" action="#">
                                 <input type="text" name="query" placeholder="Search" />
                             </form>
                         </li>
                         <li className="menu">
-                            <a className="fa-bars" href="#menu">Menu</a>
+                            <Link className="fa-bars" to="/">Menu</Link>
                         </li>
                     </ul>
                 </nav>
@@ -38,28 +39,28 @@ class Header extends Component {
                 <section>
                     <ul className="links">
                         <li>
-                            <a href="#">
+                            <Link to="/">
                                 <h3>Lorem ipsum</h3>
                                 <p>Feugiat tempus veroeros dolor</p>
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a href="#">
+                            <Link to="/">
                                 <h3>Dolor sit amet</h3>
                                 <p>Sed vitae justo condimentum</p>
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a href="#">
+                            <Link to="/">
                                 <h3>Feugiat veroeros</h3>
                                 <p>Phasellus sed ultricies mi congue</p>
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a href="#">
+                            <Link to="/">
                                 <h3>Etiam sed consequat</h3>
                                 <p>Porta lectus amet ultricies</p>
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </section>
@@ -67,7 +68,7 @@ class Header extends Component {
 
                 <section>
                     <ul className="actions stacked">
-                        <li><a href="#" className="button large fit">Log In</a></li>
+                        <li><Link to="/" className="button large fit">Log In</Link></li>
                     </ul>
                 </section>
             </section>

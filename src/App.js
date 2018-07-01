@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import Story from './containers/story/story'
-import { BrowserRouter } from 'react-router-dom';
+import Story from './containers/stories'
+import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-       <Story/>
+        <Switch>
+          <Route path='/' exact component={Story}/>
+        </Switch>
       </div>
     );
   }

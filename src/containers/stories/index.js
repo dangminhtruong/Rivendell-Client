@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import Stories from '../../components/pages/stories';
 
 class Story extends Component{
     render(){
         return(
             <div>
-                <h3>RIVENDELL</h3>
+                <Stories/>
             </div>
         )
     }

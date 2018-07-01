@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import Header from '../../reuse/header';
 import Footer from '../../reuse/footer';
+import { connect } from 'react-redux';
+import { actFetchSingleStoryRequest } from '../../../store/actions/actions'
 
 class SingleStory extends Component {
+
+    componentDidMount(){
+        console.log(this.props);
+        this.props.getSingleStory(2);
+    }
+
     render() {
         return (
             <div>
@@ -40,4 +48,19 @@ class SingleStory extends Component {
     }
 }
 
-export default SingleStory;
+const mapStateToProps = state => {
+    return {
+        story : state.appStoriesReducer.get('story')
+    }
+}
+
+const mapDispatchToProps = (dispatch, props) => {
+    return {
+        getSingleStory: (id) => {
+            dispatch(actFetchSingleStoryRequest(id));
+        },
+    }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(SingleStory);

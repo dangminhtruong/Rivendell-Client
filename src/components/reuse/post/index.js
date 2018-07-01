@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 
-class Header extends Component {
+class Story extends Component {
     render() {
         return (
             <article className="post">
                 <header>
                     <div className="title">
-                        <h2><a href="single.html">{ this.props.post.title }</a></h2>
+                        <h2><a href="single.html">{ this.props.story.get('title') }</a></h2>
                         <p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
                     </div>
                     <div className="meta">
@@ -15,10 +16,10 @@ class Header extends Component {
                     </div>
                 </header>
                 <a href="single.html" className="image featured"><img src="images/pic01.jpg" alt="" /></a>
-                <p>{ this.props.post.body }</p>
+                <p>{ this.props.story.get('body') }</p>
                 <footer>
                     <ul className="actions">
-                        <li><a href="single.html" className="button large">Continue Reading</a></li>
+                        <li><Link to={`/story/${this.props.story.get('id')}`} className="button large">Continue Reading</Link></li>
                     </ul>
                     <ul className="stats">
                         <li><a href="#">General</a></li>
@@ -31,4 +32,4 @@ class Header extends Component {
     }
 }
 
-export default Header;
+export default Story;

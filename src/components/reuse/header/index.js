@@ -31,12 +31,12 @@ class Header extends Component {
             </header>
             <section id="menu">
                 <section>
-                    <form class="search" method="get" action="#">
+                    <form className="search" method="get" action="#">
                         <input type="text" name="query" placeholder="Search" />
                     </form>
                 </section>
                 <section>
-                    <ul class="links">
+                    <ul className="links">
                         <li>
                             <a href="#">
                                 <h3>Lorem ipsum</h3>
@@ -66,8 +66,8 @@ class Header extends Component {
 
 
                 <section>
-                    <ul class="actions stacked">
-                        <li><a href="#" class="button large fit">Log In</a></li>
+                    <ul className="actions stacked">
+                        <li><a href="#" className="button large fit">Log In</a></li>
                     </ul>
                 </section>
             </section>

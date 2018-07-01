@@ -1,0 +1,2 @@
+export const FETCH_STORY_REQUEST = 'FETCH_STORY_REQUEST';
+export const FETCH_STORY = 'FETCH_STORY';

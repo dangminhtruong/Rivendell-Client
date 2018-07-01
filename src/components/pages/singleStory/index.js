@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import Header from '../../reuse/header';
+import Footer from '../../reuse/footer';
 
 class SingleStory extends Component {
     render() {
         return (
             <div>
-                <div id="main" style = {{ marginTop : '15vh' }}>
+                <div id="main">
                     <Header/>
                     <article className="post">
                         <header>
@@ -14,7 +15,7 @@ class SingleStory extends Component {
                                 <p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
                             </div>
                             <div className="meta">
-                                <time className="published" datetime="2015-11-01">November 1, 2015</time>
+                                <time className="published" dateTime="2015-11-01">November 1, 2015</time>
                                 <a href="#" className="author"><span className="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
                             </div>
                         </header>
@@ -33,18 +34,7 @@ class SingleStory extends Component {
                     </article>
 
                 </div>
-
-
-                <section id="footer" style={{ textAlign : 'center' }}>
-                    <ul className="icons">
-                        <li><a href="#" className="fa-twitter"><span className="label">Twitter</span></a></li>
-                        <li><a href="#" className="fa-facebook"><span className="label">Facebook</span></a></li>
-                        <li><a href="#" className="fa-instagram"><span className="label">Instagram</span></a></li>
-                        <li><a href="#" className="fa-rss"><span className="label">RSS</span></a></li>
-                        <li><a href="#" className="fa-envelope"><span className="label">Email</span></a></li>
-                    </ul>
-                    <p className="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
-                </section>
+                <Footer/>
             </div>
         )
     }

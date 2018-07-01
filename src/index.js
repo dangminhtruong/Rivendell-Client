@@ -8,17 +8,20 @@ import thunk from 'redux-thunk';
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+import storiesReducer from './store/reducers/stories';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
-    //burgerBuilder: burgerBuilderReducer,
-    //order: orderReducer
+    appStoriesReducer : storiesReducer,
 });
 
-const store = createStore(rootReducer, composeEnhancers(
-    applyMiddleware(thunk)
-));
+const store = createStore(
+    rootReducer, 
+    composeEnhancers(
+        applyMiddleware(thunk)
+    )
+);
 
 const app = (
     <Provider store={store}>

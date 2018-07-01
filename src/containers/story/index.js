@@ -4,7 +4,7 @@ import SingleStory from '../../components/pages/singleStory';
 class Story extends Component{
     render(){
         return(
-            <div>
+            <div id="wrapper" style={{ marginTop: '10vh' }}>
                 <SingleStory/>
             </div>
         )

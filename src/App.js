@@ -9,7 +9,7 @@ class App extends Component {
       <div className="App">
         <Switch>
           <Route path='/' exact component={Stories}/>
-          <Route path='/story/:id' exact component={Story}/>
+          <Route path='/story/:id' exact component={Story} />
         </Switch>
       </div>
     );

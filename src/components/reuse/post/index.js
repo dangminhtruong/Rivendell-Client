@@ -12,7 +12,7 @@ class Story extends Component {
                     </div>
                     <div className="meta">
                         <time className="published" dateTime="2015-11-01">November 1, 2015</time>
-                        <Link to='/' className="author"><span className="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></Link >
+                        <Link to='/' className="author"><span className="name">{ this.props.story.get('username') }</span><img src="images/avatar.jpg" alt="" /></Link >
                     </div>
                 </header>
                 <Link to="/" className="image featured"><img src="images/pic01.jpg" alt="" /></Link >

@@ -1,19 +1,33 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { actFetchCategoriesRequest } from '../../../store/actions/actions'
+import { connect } from 'react-redux';
 
 class Header extends Component {
+
+    componentDidMount(){
+        this.props.getCategories();
+    }
+
     render() {
+        let categories = [];
+        categories = this.props.categories.map((category, index) => {
+            return (
+                <li key = { `ck${index}` }>
+                    <Link to="/">
+                        { category.get('name') }
+                    </Link>
+                </li>
+            )
+        });
+
         return (
             <div>
                 <header id="header">
                 <h1><Link to='/'>Rivendell</Link></h1>
                 <nav className="links">
                     <ul>
-                        <li><Link to="/">Lorem</Link></li>
-                        <li><Link to="/">Ipsum</Link></li>
-                        <li><Link to="/">Feugiat</Link></li>
-                        <li><Link to="/">Tempus</Link></li>
-                        <li><Link to="/">Adipiscing</Link></li>
+                       { categories }
                     </ul>
                 </nav>
                 <nav className="main">
@@ -77,4 +91,19 @@ class Header extends Component {
     }
 }
 
-export default Header;
+
+const mapStateToProps = state => {
+    return {
+        categories : state.appStoriesReducer.get('categories').toArray()
+    }
+}
+
+const mapDispatchToProps = (dispatch, props) => {
+    return {
+        getCategories: () => {
+            dispatch(actFetchCategoriesRequest());
+        },
+    }
+}
+
+export default connect( mapStateToProps, mapDispatchToProps )(Header);

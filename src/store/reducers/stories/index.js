@@ -3,7 +3,8 @@ import { fromJS } from 'immutable';
 
 const initialState = fromJS({
     stories : [],
-    story : {}
+    story : {},
+    categories : []
 });
 
 const reducer = (state = initialState, action) => {
@@ -12,6 +13,8 @@ const reducer = (state = initialState, action) => {
             return state.set('stories', fromJS(action.stories));
         case Types.FETCH_SINGLE_STORY:
             return state.set('story', fromJS(action.story));
+        case Types.FETCH_CATEGORIES:
+            return state.set('categories', fromJS(action.categories));
         default: return state;
     }
 };

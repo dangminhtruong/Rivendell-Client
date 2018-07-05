@@ -32,3 +32,19 @@ export const actFetchStory = (story) => {
         story
     }
 }
+
+export const actFetchCategoriesRequest = () => {
+    return (dispatch) => {
+        return axios.get(`/api/index/categories`)
+        .then(res => {
+            dispatch(actFetchCategories(res.data));
+        });
+    }
+}
+
+export const actFetchCategories = (categories) => {
+    return {
+        type : Types.FETCH_CATEGORIES,
+        categories
+    }
+}

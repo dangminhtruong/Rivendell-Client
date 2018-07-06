@@ -3,7 +3,7 @@ import axios from '../../axios';
 
 export const actFetchStoriesRequest = () => {
     return (dispatch) => {
-        return axios.get('/api/index/stories')
+        return axios.get('/api/index/stories/main')
         .then(res => {
             dispatch(actFetchBooks(res.data));
         })
@@ -46,5 +46,21 @@ export const actFetchCategories = (categories) => {
     return {
         type : Types.FETCH_CATEGORIES,
         categories
+    }
+}
+
+export const atcGetSlideBarTopFourRequest = () => {
+    return (dispatch) => {
+        return axios.get(`/api/index/stories/top-five`)
+        .then(res => {
+            dispatch(actGetSlideBarTopFour(res.data));
+        });
+    }
+}
+
+export const actGetSlideBarTopFour = (slideBarTopFour) => {
+    return {
+        type : Types.FETCH_SIDEBAR_TOP_FOUR,
+        slideBarTopFour
     }
 }

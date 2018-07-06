@@ -1,8 +1,25 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { atcGetSlideBarTopFourRequest } from '../../../store/actions/actions';
+import TopFourItem from './items';
 
 class Sidebar extends Component {
+
+    componentDidMount(){
+        this.props.getSlideBarTopFour();
+    }
+
     render() {
+        let topFour = [];
+        if(this.props.slideBarTopFour.length  !== 1){
+            topFour = this.props.slideBarTopFour.map((item, index) => {
+                return (
+                    <TopFourItem post = {item} key = { `it${index}` } detail = { item }/>
+                )
+            })
+        }
+
         return (
             <section id="sidebar">
                 <section id="intro">
@@ -16,46 +33,7 @@ class Sidebar extends Component {
 
                 <section>
                     <div className="mini-posts">
-
-                        <article className="mini-post">
-                            <header>
-                                <h3><Link to="single.html">Vitae sed condimentum</Link></h3>
-                                <time className="published" dateTime="2015-10-20">October 20, 2015</time>
-                                <Link to='/' className="author"><img src="images/avatar.jpg" alt="" /></Link>
-                            </header>
-                            <Link to="single.html" className="image"><img src="images/pic04.jpg" alt="" /></Link>
-                        </article>
-
-
-                        <article className="mini-post">
-                            <header>
-                                <h3><Link to="single.html">Rutrum neque accumsan</Link></h3>
-                                <time className="published" dateTime="2015-10-19">October 19, 2015</time>
-                                <Link to='/' className="author"><img src="images/avatar.jpg" alt="" /></Link>
-                            </header>
-                            <Link to="single.html" className="image"><img src="images/pic05.jpg" alt="" /></Link>
-                        </article>
-
-
-                        <article className="mini-post">
-                            <header>
-                                <h3><Link to="single.html">Odio congue mattis</Link></h3>
-                                <time className="published" dateTime="2015-10-18">October 18, 2015</time>
-                                <Link to='/' className="author"><img src="images/avatar.jpg" alt="" /></Link>
-                            </header>
-                            <Link to="single.html" className="image"><img src="images/pic06.jpg" alt="" /></Link>
-                        </article>
-
-
-                        <article className="mini-post">
-                            <header>
-                                <h3><Link to="single.html">Enim nisl veroeros</Link></h3>
-                                <time className="published" dateTime="2015-10-17">October 17, 2015</time>
-                                <Link to='/' className="author"><img src="images/avatar.jpg" alt="" /></Link>
-                            </header>
-                            <Link to="single.html" className="image"><img src="images/pic07.jpg" alt="" /></Link>
-                        </article>
-
+                       { topFour }
                     </div>
                 </section>
 
@@ -135,4 +113,19 @@ class Sidebar extends Component {
     }
 }
 
-export default Sidebar;
+const mapStateToProps = state => {
+    return {
+        slideBarTopFour : state.appStoriesReducer.get('slideBarTopFour').toArray()
+    }
+}
+
+const mapDispatchToProps = (dispatch, props) => {
+    return {
+        getSlideBarTopFour: () => {
+            dispatch(atcGetSlideBarTopFourRequest());
+        },
+    }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);

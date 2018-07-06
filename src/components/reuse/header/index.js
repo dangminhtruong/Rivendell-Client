@@ -11,15 +11,17 @@ class Header extends Component {
 
     render() {
         let categories = [];
-        categories = this.props.categories.map((category, index) => {
-            return (
-                <li key = { `ck${index}` }>
-                    <Link to="/">
-                        { category.get('name') }
-                    </Link>
-                </li>
-            )
-        });
+        if(this.props.categories.length !== 0){
+            categories = this.props.categories.map((category, index) => {
+                return (
+                    <li key = { `ck${index}` }>
+                        <Link to="/">
+                            { category.get('name') }
+                        </Link>
+                    </li>
+                )
+            });
+        }
 
         return (
             <div>

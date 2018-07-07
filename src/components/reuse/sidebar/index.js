@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { atcGetSlideBarTopFourRequest } from '../../../store/actions/actions';
 import TopFourItem from './items';
+import config from '../../../config';
 
 class Sidebar extends Component {
 
@@ -23,7 +24,7 @@ class Sidebar extends Component {
         return (
             <section id="sidebar">
                 <section id="intro">
-                    <Link to='/' className="logo"><img src="images/logo.jpg" alt="" /></Link>
+                    <Link to='/' className="logo"><img src={`${config.BASE_API_URL}/public/images/logo.jpg`} alt="" /></Link>
                     <header>
                         <h2>Rivendell</h2>
                         <p>Another fine responsive site template by <Link to="http://html5up.net">HTML5 UP</Link></p>
@@ -46,7 +47,7 @@ class Sidebar extends Component {
                                     <h3><Link to="single.html">Lorem ipsum fermentum ut nisl vitae</Link></h3>
                                     <time className="published" dateTime="2015-10-20">October 20, 2015</time>
                                 </header>
-                                <Link to="single.html" className="image"><img src="images/pic08.jpg" alt="" /></Link>
+                                <Link to="single.html" className="image"><img src={`${config.BASE_API_URL}/public/images/pic08.jpg`} alt="" /></Link>
                             </article>
                         </li>
                         <li>
@@ -55,7 +56,7 @@ class Sidebar extends Component {
                                     <h3><Link to="single.html">Convallis maximus nisl mattis nunc id lorem</Link></h3>
                                     <time className="published" dateTime="2015-10-15">October 15, 2015</time>
                                 </header>
-                                <Link to="single.html" className="image"><img src="images/pic09.jpg" alt="" /></Link>
+                                <Link to="single.html" className="image"><img src={`${config.BASE_API_URL}/public/images/pic09.jpg`} alt="" /></Link>
                             </article>
                         </li>
                         <li>
@@ -64,7 +65,7 @@ class Sidebar extends Component {
                                     <h3><Link to="single.html">Euismod amet placerat vivamus porttitor</Link></h3>
                                     <time className="published" dateTime="2015-10-10">October 10, 2015</time>
                                 </header>
-                                <Link to="single.html" className="image"><img src="images/pic10.jpg" alt="" /></Link>
+                                <Link to="single.html" className="image"><img src={`${config.BASE_API_URL}/public/images/pic10.jpg`} alt="" /></Link>
                             </article>
                         </li>
                         <li>
@@ -73,7 +74,7 @@ class Sidebar extends Component {
                                     <h3><Link to="single.html">Magna enim accumsan tortor cursus ultricies</Link></h3>
                                     <time className="published" dateTime="2015-10-08">October 8, 2015</time>
                                 </header>
-                                <Link to="single.html" className="image"><img src="images/pic11.jpg" alt="" /></Link>
+                                <Link to="single.html" className="image"><img src={`${config.BASE_API_URL}/public/images/pic11.jpg`} alt="" /></Link>
                             </article>
                         </li>
                         <li>
@@ -82,7 +83,7 @@ class Sidebar extends Component {
                                     <h3><Link to="single.html">Congue ullam corper lorem ipsum dolor</Link></h3>
                                     <time className="published" dateTime="2015-10-06">October 7, 2015</time>
                                 </header>
-                                <Link to="single.html" className="image"><img src="images/pic12.jpg" alt="" /></Link>
+                                <Link to="single.html" className="image"><img src={`${config.BASE_API_URL}/public/images/pic12.jpg`} alt="" /></Link>
                             </article>
                         </li>
                     </ul>

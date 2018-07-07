@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
+import config from '../../../config';
 
 class Story extends Component {
     render() {
@@ -15,7 +16,7 @@ class Story extends Component {
                         <Link to='/' className="author"><span className="name">{ this.props.story.get('username') }</span><img src="images/avatar.jpg" alt="" /></Link >
                     </div>
                 </header>
-                <Link to="/" className="image featured"><img src="images/pic01.jpg" alt="" /></Link >
+                <Link to="/" className="image featured"><img src={`${config.BASE_API_URL}/public/images/pic01.jpg`} alt="" /></Link >
                 <p>{ this.props.story.get('body') }</p>
                 <footer>
                     <ul className="actions">

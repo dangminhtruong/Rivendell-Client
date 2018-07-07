@@ -51,7 +51,7 @@ export const actFetchCategories = (categories) => {
 
 export const atcGetSlideBarTopFourRequest = () => {
     return (dispatch) => {
-        return axios.get(`/api/index/stories/top-five`)
+        return axios.get(`/api/index/stories/top-four`)
         .then(res => {
             dispatch(actGetSlideBarTopFour(res.data));
         });

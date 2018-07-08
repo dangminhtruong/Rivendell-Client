@@ -27,7 +27,7 @@ class SingleStory extends Component {
                             </div>
                             <div className="meta">
                                 <time className="published" dateTime="2015-11-01">November 1, 2015</time>
-                                <Link to="/" className="author"><span className="name">Jane Doe</span>
+                                <Link to="/" className="author"><span className="name">{ this.props.story.get('username') }</span>
                                     <img src={`${config.BASE_API_URL}/public/images/avatar.jpg`} alt="rivendell" />
                                 </Link>
                             </div>
@@ -41,9 +41,6 @@ class SingleStory extends Component {
                                 <li><i className="fa fa-calendar" aria-hidden="true"></i>
                                     <span> June 30, 2015</span>
                                 </li>
-                                <li><i className="fa fa-user-o" aria-hidden="true"></i>
-                                    <span> admin</span>
-                                </li>
                                 <li><i className="fa fa-comment-o" aria-hidden="true"></i>
                                     <span> 2 comments</span>
                                 </li>
@@ -55,32 +52,6 @@ class SingleStory extends Component {
                                 </li>
                             </ul>
                         </div>
-                        <section className="comments">
-                            <article>
-                                <img id="profile-photo" src="https://en.gravatar.com/userimage/18343163/3fd908393aedf6423ec12cacec9a1f50.jpg?size=200"  alt="rivendell"/>
-                                <h4><Link to="/">chrisburton</Link></h4>
-                                <time>5 months ago</time>
-                                
-                                <p>Thank you for visiting all the way from New York. This is just a test to determine if the Twitter API is working as it should. You should see your profile image and your username at the very top that links to your account. You should also see that
-                                I wrote in a thank you introduction with your location.</p>
-                            </article>
-                            <article>
-                                <img id="profile-photo" src="https://en.gravatar.com/userimage/18343163/3fd908393aedf6423ec12cacec9a1f50.jpg?size=200"  alt="rivendell"/>
-                                <h4><Link to="/">chrisburton</Link></h4>
-                                <time>5 months ago</time>
-                               
-                                <p>Thank you for visiting all the way from New York. This is just a test to determine if the Twitter API is working as it should. You should see your profile image and your username at the very top that links to your account. You should also see that
-                                I wrote in a thank you introduction with your location.</p>
-                            </article>
-                            <article>
-                                <img id="profile-photo" src="https://en.gravatar.com/userimage/18343163/3fd908393aedf6423ec12cacec9a1f50.jpg?size=200"  alt="rivendell"/>
-                                <h4><Link to="/">chrisburton</Link></h4>
-                                <time>5 months ago</time>
-                              
-                                <p>Thank you for visiting all the way from New York. This is just a test to determine if the Twitter API is working as it should. You should see your profile image and your username at the very top that links to your account. You should also see that
-                                I wrote in a thank you introduction with your location.</p>
-                            </article>
-                        </section> 
                     </article>
                 </div>
                 <Footer/>

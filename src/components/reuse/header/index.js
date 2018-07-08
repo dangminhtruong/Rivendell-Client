@@ -26,7 +26,7 @@ class Header extends Component {
         return (
             <div>
                 <header id="header">
-                <h1><Link to='/'>Rivendell</Link></h1>
+                <h1><Link to='/'>Truong Dang</Link></h1>
                 <nav className="links">
                     <ul>
                        { categories }

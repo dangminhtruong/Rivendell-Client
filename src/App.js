@@ -8,8 +8,8 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
-          <Route path='/' exact component={Stories}/>
-          <Route path='/story/:id' exact component={Story} />
+          <Route path='/' exact component={Stories} />
+          <Route path='/story/:id' exact component={Story} onUpdate={() => window.scrollTo(0, 0)} />
         </Switch>
       </div>
     );

@@ -7,6 +7,7 @@ import { actFetchStoriesRequest } from '../../../store/actions/actions'
 class Stories extends Component {
     componentDidMount(){
         this.props.getListPost();
+        window.scrollTo(0,0);
     }
     render() {
         let storyList;

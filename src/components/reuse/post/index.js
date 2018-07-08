@@ -8,7 +8,7 @@ class Story extends Component {
             <article className="post">
                 <header>
                     <div className="title">
-                        <h2><Link to="/">{ this.props.story.get('title') }</Link ></h2>
+                        <h2><Link to={`/story/${this.props.story.get('id')}`}>{ this.props.story.get('title') }</Link ></h2>
                         <p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
                     </div>
                     <div className="meta">

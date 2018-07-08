@@ -1,28 +1,48 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import config from '../../../../config';
+import TopFourItem from './item';
+import { connect } from 'react-redux';
+import { atcGetSlideBarTopFourRequest } from '../../../../store/actions/actions';
 
-class TopFourItem extends Component{
-    render(){
-        return(
-            <article className="mini-post">
-                <header>
-                    <h3>
-                        <Link to={`/story/${this.props.detail.get('id')}`}>
-                            { this.props.detail.get('title') }
-                        </Link>
-                    </h3>
-                    <time className="published" dateTime="2015-10-17">October 17, 2015</time>
-                    <Link to={`/story/${this.props.detail.get('id')}`} className="author">
-                        <img src={`${config.BASE_API_URL}/public/images/avatar.jpg`} alt="" />
-                    </Link>
-                </header>
-                <Link to={`/story/${this.props.detail.get('id')}`} className="image">
-                    <img src={`${config.BASE_API_URL}/public/images/pic07.jpg`}alt="" />
-                </Link>
-            </article>
+class TopFour extends Component {
+
+    componentDidMount(){
+        this.props.getSlideBarTopFour();
+    }
+
+    render() {
+        let topFour = [];
+        if (this.props.sideBarTopFour.length !== 0) {
+            topFour = this.props.sideBarTopFour.map((item, index) => {
+                return (
+                    <TopFourItem post={item} key={`it${index}`} detail={item} />
+                )
+            })
+        }
+        return (
+            <section>
+                <div className="mini-posts">
+                    {topFour}
+                </div>
+            </section>
         )
     }
 }
 
-export default TopFourItem;
+const mapStateToProps = state => {
+    return {
+        sideBarTopFour : state.appStoriesReducer.get('sideBarTopFour').toArray()
+    }
+}
+
+const mapDispatchToProps = (dispatch, props) => {
+    return {
+        getSlideBarTopFour: () => {
+            dispatch(atcGetSlideBarTopFourRequest());
+        },
+    }
+}
+
+
+
+
+export default  connect(mapStateToProps, mapDispatchToProps)(TopFour);

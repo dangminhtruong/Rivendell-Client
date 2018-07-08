@@ -5,7 +5,8 @@ const initialState = fromJS({
     stories : [],
     story : {},
     categories : [],
-    slideBarTopFour : [],
+    sideBarTopFour : [],
+    sideBarRandom : []
 });
 
 const reducer = (state = initialState, action) => {
@@ -17,7 +18,9 @@ const reducer = (state = initialState, action) => {
         case Types.FETCH_CATEGORIES:
             return state.set('categories', fromJS(action.categories));
         case Types.FETCH_SIDEBAR_TOP_FOUR:
-            return state.set('slideBarTopFour', fromJS(action.slideBarTopFour));
+            return state.set('sideBarTopFour', fromJS(action.sideBarTopFour));
+        case Types.FETCH_SIDEBAR_RANDOM:
+            return state.set('sideBarRandom', fromJS(action.sideBarRandom));
         default: return state;
     }
 };

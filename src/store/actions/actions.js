@@ -58,9 +58,26 @@ export const atcGetSlideBarTopFourRequest = () => {
     }
 }
 
-export const actGetSlideBarTopFour = (slideBarTopFour) => {
+export const actGetSlideBarTopFour = (sideBarTopFour) => {
     return {
         type : Types.FETCH_SIDEBAR_TOP_FOUR,
-        slideBarTopFour
+        sideBarTopFour
+    }
+}
+
+
+export const atcGetSlideBarRandomRequest = () => {
+    return (dispatch) => {
+        return axios.get(`/api/index/stories/random`)
+        .then(res => {
+            dispatch(atcGetSlideBarRandom(res.data));
+        });
+    }
+}
+
+export const atcGetSlideBarRandom = (sideBarRandom) => {
+    return {
+        type : Types.FETCH_SIDEBAR_RANDOM,
+        sideBarRandom
     }
 }

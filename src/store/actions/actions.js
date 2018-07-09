@@ -3,7 +3,7 @@ import axios from '../../axios';
 
 export const actFetchStoriesRequest = () => {
     return (dispatch) => {
-        return axios.get('/api/index/stories/main')
+        return axios.get('/client/stories/main')
         .then(res => {
             dispatch(actFetchBooks(res.data));
         })
@@ -19,7 +19,7 @@ export const actFetchBooks = (stories) => {
 
 export const actFetchSingleStoryRequest = (id) => {
     return (dispatch) => {
-        return axios.get(`/api/index/story/${id}`)
+        return axios.get(`/client/story/${id}`)
         .then(res => {
             dispatch(actFetchStory(res.data));
         });
@@ -35,7 +35,7 @@ export const actFetchStory = (story) => {
 
 export const actFetchCategoriesRequest = () => {
     return (dispatch) => {
-        return axios.get(`/api/index/categories`)
+        return axios.get(`/client/categories`)
         .then(res => {
             dispatch(actFetchCategories(res.data));
         });
@@ -51,7 +51,7 @@ export const actFetchCategories = (categories) => {
 
 export const atcGetSlideBarTopFourRequest = () => {
     return (dispatch) => {
-        return axios.get(`/api/index/stories/top-four`)
+        return axios.get(`/client/stories/top-four`)
         .then(res => {
             dispatch(actGetSlideBarTopFour(res.data));
         });
@@ -68,7 +68,7 @@ export const actGetSlideBarTopFour = (sideBarTopFour) => {
 
 export const atcGetSlideBarRandomRequest = () => {
     return (dispatch) => {
-        return axios.get(`/api/index/stories/random`)
+        return axios.get(`/client/stories/random`)
         .then(res => {
             dispatch(atcGetSlideBarRandom(res.data));
         });
